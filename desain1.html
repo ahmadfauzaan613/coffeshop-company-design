@@ -1,393 +1,591 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BREW & VIBE | Coffee, Culture, Community</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
-                        display: ['Space Grotesk', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            base: '#FDFCF8',   // Cream/Off-white
-                            dark: '#1E1E1E',   // Charcoal/Dark Gray
-                            accent: '#D97706', // Warm Amber/Burnt Orange
-                            coffee: '#4B3621', // Deep Coffee Brown
-                            soft: '#E5E5E5',   // Light Gray for backgrounds
-                        }
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Outfit', 'sans-serif'],
+              display: ['Space Grotesk', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                base: '#FDFCF8', // Cream/Off-white
+                dark: '#1E1E1E', // Charcoal/Dark Gray
+                accent: '#D97706', // Warm Amber/Burnt Orange
+                coffee: '#4B3621', // Deep Coffee Brown
+                soft: '#E5E5E5', // Light Gray for backgrounds
+              },
+            },
+          },
+        },
+      }
     </script>
     <style>
-        .scroll-hidden::-webkit-scrollbar {
-            display: none;
-        }
-        .scroll-hidden {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+      .scroll-hidden::-webkit-scrollbar {
+        display: none;
+      }
+      .scroll-hidden {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
     </style>
-</head>
-<body class="bg-brand-base text-brand-dark font-sans selection:bg-brand-accent selection:text-white">
-
+  </head>
+  <body
+    class="bg-brand-base text-brand-dark font-sans selection:bg-brand-accent selection:text-white"
+  >
     <!-- Navbar (Absolute) -->
-    <nav class="absolute top-0 w-full z-50 py-6 px-6 md:px-12 flex justify-between items-center text-white mix-blend-difference">
-        <div class="text-2xl font-display font-bold tracking-tighter">BREW & VIBE.</div>
-        <div class="hidden md:flex gap-8 font-medium">
-            <a href="#about" class="hover:text-brand-accent transition-colors">About</a>
-            <a href="#menu" class="hover:text-brand-accent transition-colors">Menu</a>
-            <a href="#events" class="hover:text-brand-accent transition-colors">Events</a>
-            <a href="#location" class="hover:text-brand-accent transition-colors">Find Us</a>
-        </div>
-        <a href="#menu" class="px-6 py-2 border border-white rounded-full hover:bg-white hover:text-brand-dark transition-all font-medium hidden sm:block">
-            Order Now
-        </a>
+    <nav
+      class="absolute top-0 w-full z-50 py-6 px-6 md:px-12 flex justify-between items-center text-white mix-blend-difference"
+    >
+      <div class="text-2xl font-display font-bold tracking-tighter">BREW & VIBE.</div>
+      <div class="hidden md:flex gap-8 font-medium">
+        <a href="#about" class="hover:text-brand-accent transition-colors">About</a>
+        <a href="#menu" class="hover:text-brand-accent transition-colors">Menu</a>
+        <a href="#events" class="hover:text-brand-accent transition-colors">Events</a>
+        <a href="#location" class="hover:text-brand-accent transition-colors">Find Us</a>
+      </div>
+      <a
+        href="#menu"
+        class="px-6 py-2 border border-white rounded-full hover:bg-white hover:text-brand-dark transition-all font-medium hidden sm:block"
+      >
+        Order Now
+      </a>
     </nav>
 
     <!-- HERO SECTION -->
     <header class="relative h-screen w-full flex items-center justify-center overflow-hidden">
-        <!-- Background Image with Overlay -->
-        <div class="absolute inset-0 bg-black">
-            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-                 class="w-full h-full object-cover opacity-60" alt="Coffee Shop Vibes">
-        </div>
+      <!-- Background Image with Overlay -->
+      <div class="absolute inset-0 bg-black">
+        <img
+          src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+          class="w-full h-full object-cover opacity-60"
+          alt="Coffee Shop Vibes"
+        />
+      </div>
 
-        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
-            <h1 class="text-5xl md:text-7xl lg:text-9xl font-display font-bold text-white mb-6 leading-tight tracking-tighter">
-                FUEL YOUR <br><span class="text-brand-accent">VIBE.</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-200 mb-10 font-light max-w-2xl mx-auto">
-                Not just coffee. It's a culture. <br> Join the community of dreamers, creators, and caffeine addicts.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#menu" class="px-8 py-4 bg-brand-accent text-white font-bold rounded-full hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg">
-                    View Menu
-                </a>
-                <a href="#location" class="px-8 py-4 bg-white text-brand-dark font-bold rounded-full hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg">
-                    Find Us
-                </a>
-            </div>
+      <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+        <h1
+          class="text-5xl md:text-7xl lg:text-9xl font-display font-bold text-white mb-6 leading-tight tracking-tighter"
+        >
+          FUEL YOUR <br /><span class="text-brand-accent">VIBE.</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-200 mb-10 font-light max-w-2xl mx-auto">
+          Not just coffee. It's a culture. <br />
+          Join the community of dreamers, creators, and caffeine addicts.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="#menu"
+            class="px-8 py-4 bg-brand-accent text-white font-bold rounded-full hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg"
+          >
+            View Menu
+          </a>
+          <a
+            href="#location"
+            class="px-8 py-4 bg-white text-brand-dark font-bold rounded-full hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg"
+          >
+            Find Us
+          </a>
         </div>
+      </div>
 
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <a href="#about" class="text-white opacity-70 hover:opacity-100">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                </svg>
-            </a>
-        </div>
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <a href="#about" class="text-white opacity-70 hover:opacity-100">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
+          </svg>
+        </a>
+      </div>
     </header>
 
     <!-- ABOUT SECTION -->
     <section id="about" class="py-20 md:py-32 px-6 bg-brand-base">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div class="order-2 md:order-1 relative">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-                     alt="Community Vibes" class="rounded-2xl shadow-2xl w-full object-cover h-[500px] grayscale hover:grayscale-0 transition-all duration-500">
-                <div class="absolute -bottom-10 -right-10 bg-brand-dark text-white p-8 rounded-xl hidden md:block">
-                    <p class="font-display text-4xl font-bold">4.9/5</p>
-                    <p class="text-sm opacity-70">Based on vibes</p>
-                </div>
-            </div>
-            <div class="order-1 md:order-2">
-                <h3 class="text-brand-accent font-bold tracking-widest uppercase mb-4 text-sm">Our Story</h3>
-                <h2 class="text-4xl md:text-6xl font-display font-bold mb-8 leading-none">MORE THAN JUST <br>CAFFEINE.</h2>
-                <p class="text-lg md:text-xl text-gray-600 mb-6 leading-relaxed">
-                    We started Brew & Vibe because we were tired of sterile, corporate coffee shops. We wanted a space that felt like a living room, a studio, and a late-night hangout all in one.
-                </p>
-                <p class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
-                    Whether you're cramming for finals, sketching your next masterpiece, or just doom-scrolling, we've got the beans and the beats to keep you going.
-                </p>
-                <div class="flex gap-4 items-center">
-                    <div class="h-px bg-gray-300 flex-1"></div>
-                    <span class="font-display font-bold text-xl ml-4 italic">Est. 2024</span>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div class="order-2 md:order-1 relative">
+          <img
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            alt="Community Vibes"
+            class="rounded-2xl shadow-2xl w-full object-cover h-[500px] grayscale hover:grayscale-0 transition-all duration-500"
+          />
+          <div
+            class="absolute -bottom-10 -right-10 bg-brand-dark text-white p-8 rounded-xl hidden md:block"
+          >
+            <p class="font-display text-4xl font-bold">4.9/5</p>
+            <p class="text-sm opacity-70">Based on vibes</p>
+          </div>
         </div>
+        <div class="order-1 md:order-2">
+          <h3 class="text-brand-accent font-bold tracking-widest uppercase mb-4 text-sm">
+            Our Story
+          </h3>
+          <h2 class="text-4xl md:text-6xl font-display font-bold mb-8 leading-none">
+            MORE THAN JUST <br />CAFFEINE.
+          </h2>
+          <p class="text-lg md:text-xl text-gray-600 mb-6 leading-relaxed">
+            We started Brew & Vibe because we were tired of sterile, corporate coffee shops. We
+            wanted a space that felt like a living room, a studio, and a late-night hangout all in
+            one.
+          </p>
+          <p class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
+            Whether you're cramming for finals, sketching your next masterpiece, or just
+            doom-scrolling, we've got the beans and the beats to keep you going.
+          </p>
+          <div class="flex gap-4 items-center">
+            <div class="h-px bg-gray-300 flex-1"></div>
+            <span class="font-display font-bold text-xl ml-4 italic">Est. 2024</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- MENU SECTION -->
     <section id="menu" class="py-20 md:py-32 px-6 bg-stone-100">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-6xl font-display font-bold mb-4">THE GOODS</h2>
-                <p class="text-xl text-gray-600">Sourced responsibly. Roasted locally. Brewed carefully.</p>
-            </div>
-
-            <!-- Categories -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-                <!-- COFFEE -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow border border-gray-100">
-                    <h3 class="text-2xl font-display font-bold mb-6 border-b pb-4 flex justify-between items-center">
-                        COFFEE <span>☕</span>
-                    </h3>
-                    <ul class="space-y-6">
-                        <li class="flex justify-between items-start">
-                            <div>
-                                <h4 class="font-bold text-lg">House Espresso</h4>
-                                <p class="text-sm text-gray-500">Double shot, rich & creamy</p>
-                            </div>
-                            <span class="font-display font-bold text-lg">$3.50</span>
-                        </li>
-                        <li class="flex justify-between items-start">
-                            <div>
-                                <h4 class="font-bold text-lg">Oat Flat White</h4>
-                                <p class="text-sm text-gray-500">Velvety microfoam, nutty notes</p>
-                            </div>
-                            <span class="font-display font-bold text-lg">$4.50</span>
-                        </li>
-                        <li class="flex justify-between items-start">
-                            <div class="relative">
-                                <h4 class="font-bold text-lg text-brand-accent">Cold Brew Float</h4>
-                                <p class="text-sm text-gray-500">With vanilla bean gelato</p>
-                                <span class="absolute -top-4 -right-12 bg-black text-white text-xs px-2 py-1 rounded-full">POPULAR</span>
-                            </div>
-                            <span class="font-display font-bold text-lg">$6.00</span>
-                        </li>
-                        <li class="flex justify-between items-start">
-                            <div>
-                                <h4 class="font-bold text-lg">V60 Pour Over</h4>
-                                <p class="text-sm text-gray-500">Ethiopian Yirgacheffe</p>
-                            </div>
-                            <span class="font-display font-bold text-lg">$5.00</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- NOT COFFEE -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow border border-gray-100">
-                    <h3 class="text-2xl font-display font-bold mb-6 border-b pb-4 flex justify-between items-center">
-                        NOT COFFEE <span>🍵</span>
-                    </h3>
-                    <ul class="space-y-6">
-                        <li class="flex justify-between items-start">
-                            <div>
-                                <h4 class="font-bold text-lg">Matcha Latte</h4>
-                                <p class="text-sm text-gray-500">Ceremonial grade from Uji</p>
-                            </div>
-                            <span class="font-display font-bold text-lg">$5.00</span>
-                        </li>
-                        <li class="flex justify-between items-start">
-                            <div>
-                                <h4 class="font-bold text-lg">Golden Turmeric</h4>
-                                <p class="text-sm text-gray-500">Ginger, honey, almond milk</p>
-                            </div>
-                            <span class="font-display font-bold text-lg">$4.50</span>
-                        </li>
-                        <li class="flex justify-between items-start">
-                            <div>
-                                <h4 class="font-bold text-lg">Iced Hibiscus Tea</h4>
-                                <p class="text-sm text-gray-500">Citrusy, refreshing, sparkling</p>
-                            </div>
-                            <span class="font-display font-bold text-lg">$4.00</span>
-                        </li>
-                        <li class="flex justify-between items-start">
-                            <div>
-                                <h4 class="font-bold text-lg">Hot Chocolate</h4>
-                                <p class="text-sm text-gray-500">70% dark chocolate, sea salt</p>
-                            </div>
-                            <span class="font-display font-bold text-lg">$4.50</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- SNACKS -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow border border-gray-100">
-                    <h3 class="text-2xl font-display font-bold mb-6 border-b pb-4 flex justify-between items-center">
-                        BITES <span>🥐</span>
-                    </h3>
-                    <ul class="space-y-6">
-                        <li class="flex justify-between items-start">
-                            <div class="relative">
-                                <h4 class="font-bold text-lg text-brand-accent">Almond Croissant</h4>
-                                <p class="text-sm text-gray-500">Baked fresh daily</p>
-                                <span class="absolute -top-4 -right-12 bg-brand-accent text-white text-xs px-2 py-1 rounded-full">MUST TRY</span>
-                            </div>
-                            <span class="font-display font-bold text-lg">$4.50</span>
-                        </li>
-                        <li class="flex justify-between items-start">
-                            <div>
-                                <h4 class="font-bold text-lg">Avo Toast</h4>
-                                <p class="text-sm text-gray-500">Sourdough, chili flakes, feta</p>
-                            </div>
-                            <span class="font-display font-bold text-lg">$8.00</span>
-                        </li>
-                        <li class="flex justify-between items-start">
-                            <div>
-                                <h4 class="font-bold text-lg">Banana Bread</h4>
-                                <p class="text-sm text-gray-500">Toasted with espresso butter</p>
-                            </div>
-                            <span class="font-display font-bold text-lg">$4.00</span>
-                        </li>
-                        <li class="flex justify-between items-start">
-                            <div>
-                                <h4 class="font-bold text-lg">Vegan Brownie</h4>
-                                <p class="text-sm text-gray-500">Fudgy, walnut chunks</p>
-                            </div>
-                            <span class="font-display font-bold text-lg">$3.50</span>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="mt-12 text-center">
-                <a href="#" class="inline-block border-b-2 border-brand-dark pb-1 text-lg font-bold hover:text-brand-accent hover:border-brand-accent transition-colors">
-                    Download Full Menu (PDF)
-                </a>
-            </div>
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-6xl font-display font-bold mb-4">THE GOODS</h2>
+          <p class="text-xl text-gray-600">
+            Sourced responsibly. Roasted locally. Brewed carefully.
+          </p>
         </div>
+
+        <!-- Categories -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- COFFEE -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow border border-gray-100"
+          >
+            <h3
+              class="text-2xl font-display font-bold mb-6 border-b pb-4 flex justify-between items-center"
+            >
+              COFFEE <span>☕</span>
+            </h3>
+            <ul class="space-y-6">
+              <li class="flex justify-between items-start">
+                <div>
+                  <h4 class="font-bold text-lg">House Espresso</h4>
+                  <p class="text-sm text-gray-500">Double shot, rich & creamy</p>
+                </div>
+                <span class="font-display font-bold text-lg">$3.50</span>
+              </li>
+              <li class="flex justify-between items-start">
+                <div>
+                  <h4 class="font-bold text-lg">Oat Flat White</h4>
+                  <p class="text-sm text-gray-500">Velvety microfoam, nutty notes</p>
+                </div>
+                <span class="font-display font-bold text-lg">$4.50</span>
+              </li>
+              <li class="flex justify-between items-start">
+                <div class="relative">
+                  <h4 class="font-bold text-lg text-brand-accent">Cold Brew Float</h4>
+                  <p class="text-sm text-gray-500">With vanilla bean gelato</p>
+                  <span
+                    class="absolute -top-4 -right-12 bg-black text-white text-xs px-2 py-1 rounded-full"
+                    >POPULAR</span
+                  >
+                </div>
+                <span class="font-display font-bold text-lg">$6.00</span>
+              </li>
+              <li class="flex justify-between items-start">
+                <div>
+                  <h4 class="font-bold text-lg">V60 Pour Over</h4>
+                  <p class="text-sm text-gray-500">Ethiopian Yirgacheffe</p>
+                </div>
+                <span class="font-display font-bold text-lg">$5.00</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- NOT COFFEE -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow border border-gray-100"
+          >
+            <h3
+              class="text-2xl font-display font-bold mb-6 border-b pb-4 flex justify-between items-center"
+            >
+              NOT COFFEE <span>🍵</span>
+            </h3>
+            <ul class="space-y-6">
+              <li class="flex justify-between items-start">
+                <div>
+                  <h4 class="font-bold text-lg">Matcha Latte</h4>
+                  <p class="text-sm text-gray-500">Ceremonial grade from Uji</p>
+                </div>
+                <span class="font-display font-bold text-lg">$5.00</span>
+              </li>
+              <li class="flex justify-between items-start">
+                <div>
+                  <h4 class="font-bold text-lg">Golden Turmeric</h4>
+                  <p class="text-sm text-gray-500">Ginger, honey, almond milk</p>
+                </div>
+                <span class="font-display font-bold text-lg">$4.50</span>
+              </li>
+              <li class="flex justify-between items-start">
+                <div>
+                  <h4 class="font-bold text-lg">Iced Hibiscus Tea</h4>
+                  <p class="text-sm text-gray-500">Citrusy, refreshing, sparkling</p>
+                </div>
+                <span class="font-display font-bold text-lg">$4.00</span>
+              </li>
+              <li class="flex justify-between items-start">
+                <div>
+                  <h4 class="font-bold text-lg">Hot Chocolate</h4>
+                  <p class="text-sm text-gray-500">70% dark chocolate, sea salt</p>
+                </div>
+                <span class="font-display font-bold text-lg">$4.50</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- SNACKS -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow border border-gray-100"
+          >
+            <h3
+              class="text-2xl font-display font-bold mb-6 border-b pb-4 flex justify-between items-center"
+            >
+              BITES <span>🥐</span>
+            </h3>
+            <ul class="space-y-6">
+              <li class="flex justify-between items-start">
+                <div class="relative">
+                  <h4 class="font-bold text-lg text-brand-accent">Almond Croissant</h4>
+                  <p class="text-sm text-gray-500">Baked fresh daily</p>
+                  <span
+                    class="absolute -top-4 -right-12 bg-brand-accent text-white text-xs px-2 py-1 rounded-full"
+                    >MUST TRY</span
+                  >
+                </div>
+                <span class="font-display font-bold text-lg">$4.50</span>
+              </li>
+              <li class="flex justify-between items-start">
+                <div>
+                  <h4 class="font-bold text-lg">Avo Toast</h4>
+                  <p class="text-sm text-gray-500">Sourdough, chili flakes, feta</p>
+                </div>
+                <span class="font-display font-bold text-lg">$8.00</span>
+              </li>
+              <li class="flex justify-between items-start">
+                <div>
+                  <h4 class="font-bold text-lg">Banana Bread</h4>
+                  <p class="text-sm text-gray-500">Toasted with espresso butter</p>
+                </div>
+                <span class="font-display font-bold text-lg">$4.00</span>
+              </li>
+              <li class="flex justify-between items-start">
+                <div>
+                  <h4 class="font-bold text-lg">Vegan Brownie</h4>
+                  <p class="text-sm text-gray-500">Fudgy, walnut chunks</p>
+                </div>
+                <span class="font-display font-bold text-lg">$3.50</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <a
+            href="#"
+            class="inline-block border-b-2 border-brand-dark pb-1 text-lg font-bold hover:text-brand-accent hover:border-brand-accent transition-colors"
+          >
+            Download Full Menu (PDF)
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- EVENTS SECTION -->
     <section id="events" class="py-20 md:py-32 px-6 bg-brand-dark text-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                <div>
-                    <h3 class="text-brand-accent font-bold tracking-widest uppercase mb-4 text-sm">Community</h3>
-                    <h2 class="text-4xl md:text-6xl font-display font-bold">WHAT'S HAPPENING</h2>
-                </div>
-                <a href="#" class="px-6 py-3 border border-white rounded-full hover:bg-white hover:text-brand-dark transition-all">
-                    View Calendar
-                </a>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Event Card 1 -->
-                <div class="group relative overflow-hidden rounded-2xl aspect-[16/9] cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-                         alt="Latte Art" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end p-8">
-                        <div class="text-brand-accent font-bold mb-2">THIS FRIDAY • 7:00 PM</div>
-                        <h3 class="text-3xl font-display font-bold mb-2">Latte Art Throwdown</h3>
-                        <p class="text-gray-300">Watch the best baristas in the city compete. Free entry.</p>
-                    </div>
-                </div>
-
-                <!-- Event Card 2 -->
-                <div class="group relative overflow-hidden rounded-2xl aspect-[16/9] cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1516280440614-6697288d5d38?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-                         alt="Open Mic" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end p-8">
-                        <div class="text-brand-accent font-bold mb-2">EVERY SUNDAY • 6:00 PM</div>
-                        <h3 class="text-3xl font-display font-bold mb-2">Acoustic Open Mic</h3>
-                        <p class="text-gray-300">Bring your guitar, poetry, or just your vibes.</p>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div>
+            <h3 class="text-brand-accent font-bold tracking-widest uppercase mb-4 text-sm">
+              Community
+            </h3>
+            <h2 class="text-4xl md:text-6xl font-display font-bold">WHAT'S HAPPENING</h2>
+          </div>
+          <a
+            href="#"
+            class="px-6 py-3 border border-white rounded-full hover:bg-white hover:text-brand-dark transition-all"
+          >
+            View Calendar
+          </a>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Event Card 1 -->
+          <div class="group relative overflow-hidden rounded-2xl aspect-[16/9] cursor-pointer">
+            <img
+              src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+              alt="Latte Art"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end p-8"
+            >
+              <div class="text-brand-accent font-bold mb-2">THIS FRIDAY • 7:00 PM</div>
+              <h3 class="text-3xl font-display font-bold mb-2">Latte Art Throwdown</h3>
+              <p class="text-gray-300">Watch the best baristas in the city compete. Free entry.</p>
+            </div>
+          </div>
+
+          <!-- Event Card 2 -->
+          <div class="group relative overflow-hidden rounded-2xl aspect-[16/9] cursor-pointer">
+            <img
+              src="https://images.unsplash.com/photo-1611956425642-d5a8169abd63?q=80&w=1211&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Open Mic"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end p-8"
+            >
+              <div class="text-brand-accent font-bold mb-2">EVERY SUNDAY • 6:00 PM</div>
+              <h3 class="text-3xl font-display font-bold mb-2">Acoustic Open Mic</h3>
+              <p class="text-gray-300">Bring your guitar, poetry, or just your vibes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- INSTAGRAM SECTION -->
     <section class="py-20 px-6 bg-brand-base overflow-hidden">
-        <div class="max-w-7xl mx-auto text-center mb-12">
-            <h2 class="text-3xl md:text-5xl font-display font-bold mb-4">HANG OUT WITH US ON INSTA ☕📸</h2>
-            <p class="text-xl text-gray-500 mb-8">@brewandvibe</p>
-            <a href="#" class="px-8 py-3 bg-brand-dark text-white rounded-full font-bold hover:bg-gray-800 transition-all inline-flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                Follow on Instagram
-            </a>
-        </div>
+      <div class="max-w-7xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-5xl font-display font-bold mb-4">
+          HANG OUT WITH US ON INSTA ☕📸
+        </h2>
+        <p class="text-xl text-gray-500 mb-8">@brewandvibe</p>
+        <a
+          href="#"
+          class="px-8 py-3 bg-brand-dark text-white rounded-full font-bold hover:bg-gray-800 transition-all inline-flex items-center gap-2"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          Follow on Instagram
+        </a>
+      </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 px-4">
-            <div class="aspect-square bg-gray-200 overflow-hidden rounded-xl">
-                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer" alt="Insta 1">
-            </div>
-            <div class="aspect-square bg-gray-200 overflow-hidden rounded-xl">
-                <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer" alt="Insta 2">
-            </div>
-            <div class="aspect-square bg-gray-200 overflow-hidden rounded-xl">
-                <img src="https://images.unsplash.com/photo-1463171379577-7f9923024716?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer" alt="Insta 3">
-            </div>
-            <div class="aspect-square bg-gray-200 overflow-hidden rounded-xl">
-                <img src="https://images.unsplash.com/photo-1510972527921-ce0109dd1845?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer" alt="Insta 4">
-            </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 px-4">
+        <div class="aspect-square bg-gray-200 overflow-hidden rounded-xl">
+          <img
+            src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer"
+            alt="Insta 1"
+          />
         </div>
+        <div class="aspect-square bg-gray-200 overflow-hidden rounded-xl">
+          <img
+            src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer"
+            alt="Insta 2"
+          />
+        </div>
+        <div class="aspect-square bg-gray-200 overflow-hidden rounded-xl">
+          <img
+            src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer"
+            alt="Insta 3"
+          />
+        </div>
+        <div class="aspect-square bg-gray-200 overflow-hidden rounded-xl">
+          <img
+            src="https://images.unsplash.com/photo-1506372023823-741c83b836fe?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer"
+            alt="Insta 4"
+          />
+        </div>
+      </div>
     </section>
 
     <!-- LOCATION SECTION -->
     <section id="location" class="relative bg-stone-200 h-[600px] flex items-center">
-        <!-- Google Map Iframe Placeholder -->
-        <div class="absolute inset-0 grayscale">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158857.7281066703!2d-0.24168144921176335!3d51.5287718408761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2s!4v1623862215456!5m2!1sen!2s"
-                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
+      <!-- Google Map Iframe Placeholder -->
+      <div class="absolute inset-0 grayscale">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158857.7281066703!2d-0.24168144921176335!3d51.5287718408761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2s!4v1623862215456!5m2!1sen!2s"
+          width="100%"
+          height="100%"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
 
-        <!-- Floating Location Card -->
-        <div class="relative z-10 container mx-auto px-6 pointer-events-none">
-            <div class="bg-white/95 backdrop-blur-sm p-8 md:p-12 max-w-md rounded-2xl shadow-2xl pointer-events-auto">
-                <h2 class="text-3xl font-display font-bold mb-6">FIND US</h2>
+      <!-- Floating Location Card -->
+      <div class="relative z-10 container mx-auto px-6 pointer-events-none">
+        <div
+          class="bg-white/95 backdrop-blur-sm p-8 md:p-12 max-w-md rounded-2xl shadow-2xl pointer-events-auto"
+        >
+          <h2 class="text-3xl font-display font-bold mb-6">FIND US</h2>
 
-                <div class="space-y-6">
-                    <div class="flex items-start gap-4">
-                        <div class="bg-brand-accent/10 p-3 rounded-full text-brand-accent">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-lg">Brew & Vibe HQ</h4>
-                            <p class="text-gray-600">123 Espresso Lane<br>Coffee District, NY 10012</p>
-                            <a href="#" class="text-brand-accent font-bold text-sm mt-2 inline-block hover:underline">Open in Google Maps →</a>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4">
-                        <div class="bg-brand-accent/10 p-3 rounded-full text-brand-accent">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-lg">Opening Hours</h4>
-                            <p class="text-gray-600 font-mono text-sm leading-relaxed">
-                                Mon - Fri: 7:00 AM - 10:00 PM<br>
-                                Sat - Sun: 8:00 AM - 11:00 PM
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-8 pt-8 border-t border-gray-100 flex justify-between">
-                    <div class="text-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-2 text-gray-400"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
-                        <span class="text-xs font-bold text-gray-500 uppercase">Fast WiFi</span>
-                    </div>
-                    <div class="text-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-2 text-gray-400"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                        <span class="text-xs font-bold text-gray-500 uppercase">Sockets</span>
-                    </div>
-                    <div class="text-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-2 text-gray-400"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 1 1 14 0v5a3 3 0 0 0 3 3zm-8.25-14a3 3 0 0 0-1.5 5.6V17m-3-11.4a3 3 0 0 0 1.5 5.6V17"></path></svg>
-                        <span class="text-xs font-bold text-gray-500 uppercase">Outdoor</span>
-                    </div>
-                </div>
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="bg-brand-accent/10 p-3 rounded-full text-brand-accent">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg">Brew & Vibe HQ</h4>
+                <p class="text-gray-600">123 Espresso Lane<br />Coffee District, NY 10012</p>
+                <a
+                  href="#"
+                  class="text-brand-accent font-bold text-sm mt-2 inline-block hover:underline"
+                  >Open in Google Maps →</a
+                >
+              </div>
             </div>
+
+            <div class="flex items-start gap-4">
+              <div class="bg-brand-accent/10 p-3 rounded-full text-brand-accent">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg">Opening Hours</h4>
+                <p class="text-gray-600 font-mono text-sm leading-relaxed">
+                  Mon - Fri: 7:00 AM - 10:00 PM<br />
+                  Sat - Sun: 8:00 AM - 11:00 PM
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-8 border-t border-gray-100 flex justify-between">
+            <div class="text-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="mx-auto mb-2 text-gray-400"
+              >
+                <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                <line x1="12" y1="20" x2="12.01" y2="20"></line>
+              </svg>
+              <span class="text-xs font-bold text-gray-500 uppercase">Fast WiFi</span>
+            </div>
+            <div class="text-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="mx-auto mb-2 text-gray-400"
+              >
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              <span class="text-xs font-bold text-gray-500 uppercase">Sockets</span>
+            </div>
+            <div class="text-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="mx-auto mb-2 text-gray-400"
+              >
+                <path
+                  d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 1 1 14 0v5a3 3 0 0 0 3 3zm-8.25-14a3 3 0 0 0-1.5 5.6V17m-3-11.4a3 3 0 0 0 1.5 5.6V17"
+                ></path>
+              </svg>
+              <span class="text-xs font-bold text-gray-500 uppercase">Outdoor</span>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="bg-black text-white py-12 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-3xl font-display font-bold">BREW & VIBE.</div>
-            <div class="flex gap-8 text-sm font-medium text-gray-400">
-                <a href="#" class="hover:text-brand-accent transition-colors">Instagram</a>
-                <a href="#" class="hover:text-brand-accent transition-colors">TikTok</a>
-                <a href="#" class="hover:text-brand-accent transition-colors">Jobs</a>
-                <a href="#" class="hover:text-brand-accent transition-colors">Contact</a>
-            </div>
-            <div class="text-sm text-gray-600">
-                &copy; 2024 Brew & Vibe Coffee Co. All rights reserved.
-            </div>
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="text-3xl font-display font-bold">BREW & VIBE.</div>
+        <div class="flex gap-8 text-sm font-medium text-gray-400">
+          <a href="#" class="hover:text-brand-accent transition-colors">Instagram</a>
+          <a href="#" class="hover:text-brand-accent transition-colors">TikTok</a>
+          <a href="#" class="hover:text-brand-accent transition-colors">Jobs</a>
+          <a href="#" class="hover:text-brand-accent transition-colors">Contact</a>
         </div>
+        <div class="text-sm text-gray-600">
+          &copy; 2024 Brew & Vibe Coffee Co. All rights reserved.
+        </div>
+      </div>
     </footer>
-
-</body>
+  </body>
 </html>

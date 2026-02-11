@@ -1,399 +1,540 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BREW & VIBE. | Vol. 02</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Italiana&family=Manrope:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Manrope', 'sans-serif'],
-                        serif: ['Italiana', 'serif'],
-                    },
-                    colors: {
-                        brand: {
-                            paper: '#Fdfcf8',   // Warm off-white
-                            ink: '#1c1c1c',     // Soft black
-                            stone: '#e5e5e0',   // Light architectural gray
-                            rust: '#bc562e',    // Muted terracotta accent
-                        }
-                    },
-                    spacing: {
-                        '128': '32rem',
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Manrope', 'sans-serif'],
+              serif: ['Italiana', 'serif'],
+            },
+            colors: {
+              brand: {
+                paper: '#Fdfcf8', // Warm off-white
+                ink: '#1c1c1c', // Soft black
+                stone: '#e5e5e0', // Light architectural gray
+                rust: '#bc562e', // Muted terracotta accent
+              },
+            },
+            spacing: {
+              128: '32rem',
+            },
+          },
+        },
+      }
     </script>
     <style>
-        .editorial-line {
-            height: 1px;
-            background-color: #e5e5e0;
-            width: 100%;
-        }
+      .editorial-line {
+        height: 1px;
+        background-color: #e5e5e0;
+        width: 100%;
+      }
     </style>
-</head>
-<body class="bg-brand-paper text-brand-ink font-sans antialiased selection:bg-brand-rust selection:text-white">
-
+  </head>
+  <body
+    class="bg-brand-paper text-brand-ink font-sans antialiased selection:bg-brand-rust selection:text-white"
+  >
     <!-- NAVIGATION (Minimal) -->
-    <nav class="fixed top-0 w-full z-50 px-6 py-6 md:px-12 md:py-8 bg-brand-paper/90 backdrop-blur-md border-b border-brand-stone flex justify-between items-center transition-all duration-300">
-        <a href="#" class="text-xl md:text-2xl font-serif tracking-widest hover:opacity-70 transition-opacity">BREW & VIBE.</a>
+    <nav
+      class="fixed top-0 w-full z-50 px-6 py-6 md:px-12 md:py-8 bg-brand-paper/90 backdrop-blur-md border-b border-brand-stone flex justify-between items-center transition-all duration-300"
+    >
+      <a
+        href="#"
+        class="text-xl md:text-2xl font-serif tracking-widest hover:opacity-70 transition-opacity"
+        >BREW & VIBE.</a
+      >
 
-        <div class="hidden md:flex items-center gap-12 text-sm uppercase tracking-widest font-medium">
-            <a href="#about" class="hover:text-brand-rust transition-colors relative group">
-                About
-                <span class="absolute -bottom-1 left-0 w-0 h-px bg-brand-rust transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a href="#menu" class="hover:text-brand-rust transition-colors relative group">
-                Menu
-                <span class="absolute -bottom-1 left-0 w-0 h-px bg-brand-rust transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a href="#events" class="hover:text-brand-rust transition-colors relative group">
-                Journal
-                <span class="absolute -bottom-1 left-0 w-0 h-px bg-brand-rust transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a href="#location" class="hover:text-brand-rust transition-colors relative group">
-                Visit
-                <span class="absolute -bottom-1 left-0 w-0 h-px bg-brand-rust transition-all duration-300 group-hover:w-full"></span>
-            </a>
-        </div>
-
-        <a href="#menu" class="hidden md:inline-block px-6 py-2 border border-brand-ink text-xs uppercase tracking-widest hover:bg-brand-ink hover:text-white transition-all duration-300">
-            Order
+      <div class="hidden md:flex items-center gap-12 text-sm uppercase tracking-widest font-medium">
+        <a href="#about" class="hover:text-brand-rust transition-colors relative group">
+          About
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-px bg-brand-rust transition-all duration-300 group-hover:w-full"
+          ></span>
         </a>
+        <a href="#menu" class="hover:text-brand-rust transition-colors relative group">
+          Menu
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-px bg-brand-rust transition-all duration-300 group-hover:w-full"
+          ></span>
+        </a>
+        <a href="#events" class="hover:text-brand-rust transition-colors relative group">
+          Journal
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-px bg-brand-rust transition-all duration-300 group-hover:w-full"
+          ></span>
+        </a>
+        <a href="#location" class="hover:text-brand-rust transition-colors relative group">
+          Visit
+          <span
+            class="absolute -bottom-1 left-0 w-0 h-px bg-brand-rust transition-all duration-300 group-hover:w-full"
+          ></span>
+        </a>
+      </div>
 
-        <!-- Mobile Menu Icon -->
-        <button class="md:hidden space-y-1.5 group">
-            <span class="block w-6 h-px bg-brand-ink group-hover:w-4 transition-all duration-300 ml-auto"></span>
-            <span class="block w-6 h-px bg-brand-ink"></span>
-            <span class="block w-6 h-px bg-brand-ink group-hover:w-4 transition-all duration-300 ml-auto"></span>
-        </button>
+      <a
+        href="#menu"
+        class="hidden md:inline-block px-6 py-2 border border-brand-ink text-xs uppercase tracking-widest hover:bg-brand-ink hover:text-white transition-all duration-300"
+      >
+        Order
+      </a>
+
+      <!-- Mobile Menu Icon -->
+      <button class="md:hidden space-y-1.5 group">
+        <span
+          class="block w-6 h-px bg-brand-ink group-hover:w-4 transition-all duration-300 ml-auto"
+        ></span>
+        <span class="block w-6 h-px bg-brand-ink"></span>
+        <span
+          class="block w-6 h-px bg-brand-ink group-hover:w-4 transition-all duration-300 ml-auto"
+        ></span>
+      </button>
     </nav>
 
     <!-- HERO SECTION (Editorial Layout) -->
-    <header class="relative min-h-screen pt-32 pb-20 px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-8 items-center border-b border-brand-stone">
-
-        <!-- Text Content -->
-        <div class="md:col-span-7 flex flex-col justify-center h-full z-10">
-            <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-rust mb-6">Since 2024</p>
-            <h1 class="font-serif text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight mb-8">
-                CULTIVATING <br> <span class="italic font-light text-brand-rust">CONNECTION</span>
-            </h1>
-            <p class="text-lg md:text-xl font-light text-gray-500 max-w-md leading-relaxed mb-12">
-                A sanctuary for the modern creative. Thoughtfully sourced coffee, curated sounds, and spacing to breathe.
-            </p>
-            <div class="flex gap-6 items-center">
-                <a href="#menu" class="px-8 py-4 bg-brand-ink text-white text-sm uppercase tracking-widest hover:bg-brand-rust transition-colors duration-300">
-                    View Menu
-                </a>
-                <a href="#location" class="px-8 py-4 border border-brand-stone text-sm uppercase tracking-widest hover:border-brand-ink transition-colors duration-300">
-                    Find Us
-                </a>
-            </div>
+    <header
+      class="relative min-h-screen pt-32 pb-20 px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-8 items-center border-b border-brand-stone"
+    >
+      <!-- Text Content -->
+      <div class="md:col-span-7 flex flex-col justify-center h-full z-10">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-rust mb-6">Since 2024</p>
+        <h1 class="font-serif text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight mb-8">
+          CULTIVATING <br />
+          <span class="italic font-light text-brand-rust">CONNECTION</span>
+        </h1>
+        <p class="text-lg md:text-xl font-light text-gray-500 max-w-md leading-relaxed mb-12">
+          A sanctuary for the modern creative. Thoughtfully sourced coffee, curated sounds, and
+          spacing to breathe.
+        </p>
+        <div class="flex gap-6 items-center">
+          <a
+            href="#menu"
+            class="px-8 py-4 bg-brand-ink text-white text-sm uppercase tracking-widest hover:bg-brand-rust transition-colors duration-300"
+          >
+            View Menu
+          </a>
+          <a
+            href="#location"
+            class="px-8 py-4 border border-brand-stone text-sm uppercase tracking-widest hover:border-brand-ink transition-colors duration-300"
+          >
+            Find Us
+          </a>
         </div>
+      </div>
 
-        <!-- Hero Image -->
-        <div class="md:col-span-5 relative h-[60vh] md:h-full w-full">
-            <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-                 alt="Minimal Coffee Aesthetic"
-                 class="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out">
+      <!-- Hero Image -->
+      <div class="md:col-span-5 relative h-[60vh] md:h-full w-full">
+        <img
+          src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+          alt="Minimal Coffee Aesthetic"
+          class="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
+        />
 
-            <!-- Floating caption -->
-            <div class="absolute bottom-6 left-[-2rem] bg-white border border-brand-stone p-4 hidden md:block">
-                <p class="font-serif text-lg italic">Morning Rituals</p>
-            </div>
+        <!-- Floating caption -->
+        <div
+          class="absolute bottom-6 left-[-2rem] bg-white border border-brand-stone p-4 hidden md:block"
+        >
+          <p class="font-serif text-lg italic">Morning Rituals</p>
         </div>
+      </div>
 
-        <!-- Scroll down -->
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
-            <span class="text-[10px] uppercase tracking-widest rotate-90 origin-left translate-x-3">Scroll</span>
-            <div class="w-px h-12 bg-brand-ink"></div>
-        </div>
+      <!-- Scroll down -->
+      <div
+        class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50"
+      >
+        <span class="text-[10px] uppercase tracking-widest rotate-90 origin-left translate-x-3"
+          >Scroll</span
+        >
+        <div class="w-px h-12 bg-brand-ink"></div>
+      </div>
     </header>
 
     <!-- ABOUT SECTION (Clean Typography) -->
     <section id="about" class="py-24 md:py-32 px-6 md:px-12 border-b border-brand-stone">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 md:gap-32">
-
-            <div class="space-y-8">
-                <h2 class="font-serif text-4xl md:text-5xl leading-tight">
-                    More than just caffeine.<br>
-                    <span class="text-gray-400 italic">It's a state of mind.</span>
-                </h2>
-                <div class="w-16 h-px bg-brand-rust"></div>
-            </div>
-
-            <div class="space-y-6 text-lg font-light leading-relaxed text-gray-600">
-                <p>
-                    In a world of noise, we offer silence. In a culture of hurry, we offer pause. Brew & Vibe was born from a desire to reclaim the coffee shop as a third place—somewhere between work and home where ideas flourish.
-                </p>
-                <p>
-                    Every bean is traceable, every cup is intentional, and every playlist is curated to match the rhythm of your day. Whether you're drafting your novel or simply watching the rain, you belong here.
-                </p>
-                <div class="pt-8">
-                    <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                         alt="Pour Over" class="w-full aspect-[4/3] object-cover grayscale opacity-90">
-                    <p class="text-xs text-gray-400 mt-2 uppercase tracking-widest text-right">01 — The Craft</p>
-                </div>
-            </div>
-
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 md:gap-32">
+        <div class="space-y-8">
+          <h2 class="font-serif text-4xl md:text-5xl leading-tight">
+            More than just caffeine.<br />
+            <span class="text-gray-400 italic">It's a state of mind.</span>
+          </h2>
+          <div class="w-16 h-px bg-brand-rust"></div>
         </div>
+
+        <div class="space-y-6 text-lg font-light leading-relaxed text-gray-600">
+          <p>
+            In a world of noise, we offer silence. In a culture of hurry, we offer pause. Brew &
+            Vibe was born from a desire to reclaim the coffee shop as a third place—somewhere
+            between work and home where ideas flourish.
+          </p>
+          <p>
+            Every bean is traceable, every cup is intentional, and every playlist is curated to
+            match the rhythm of your day. Whether you're drafting your novel or simply watching the
+            rain, you belong here.
+          </p>
+          <div class="pt-8">
+            <img
+              src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Pour Over"
+              class="w-full aspect-[4/3] object-cover grayscale opacity-90"
+            />
+            <p class="text-xs text-gray-400 mt-2 uppercase tracking-widest text-right">
+              01 — The Craft
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- MENU SECTION (List Layout) -->
     <section id="menu" class="py-24 md:py-32 px-6 md:px-12 bg-brand-paper">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-20">
-                <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-rust mb-4">The Selection</p>
-                <h2 class="font-serif text-5xl md:text-6xl mb-6">Menu</h2>
-                <p class="font-light text-gray-500 italic">Seasonal. Simple. Sustainable.</p>
-            </div>
-
-            <div class="grid md:grid-cols-1 gap-20">
-
-                <!-- COFFEE -->
-                <div>
-                    <h3 class="font-serif text-2xl mb-8 border-b border-brand-ink pb-4">Espresso Bar</h3>
-                    <div class="space-y-6">
-                        <div class="flex justify-between items-baseline group hover:translate-x-2 transition-transform duration-300">
-                            <div class="flex-1">
-                                <h4 class="font-medium text-lg">House Black</h4>
-                                <p class="text-sm text-gray-400 font-light">Double shot / Long black</p>
-                            </div>
-                            <div class="flex-1 border-b border-dotted border-gray-300 mx-4 relative top-[-4px]"></div>
-                            <span class="text-lg font-serif italic">$3.50</span>
-                        </div>
-                        <div class="flex justify-between items-baseline group hover:translate-x-2 transition-transform duration-300">
-                            <div class="flex-1">
-                                <h4 class="font-medium text-lg">Oat Flat White</h4>
-                                <p class="text-sm text-gray-400 font-light">Minor Figures Oat M*lk</p>
-                            </div>
-                            <div class="flex-1 border-b border-dotted border-gray-300 mx-4 relative top-[-4px]"></div>
-                            <span class="text-lg font-serif italic">$4.50</span>
-                        </div>
-                        <div class="flex justify-between items-baseline group hover:translate-x-2 transition-transform duration-300">
-                            <div class="flex-1">
-                                <h4 class="font-medium text-lg">Cold Brew & Tonic</h4>
-                                <p class="text-sm text-gray-400 font-light">With rosemary sprig</p>
-                            </div>
-                            <div class="flex-1 border-b border-dotted border-gray-300 mx-4 relative top-[-4px]"></div>
-                            <span class="text-lg font-serif italic">$5.50</span>
-                        </div>
-                        <div class="flex justify-between items-baseline group hover:translate-x-2 transition-transform duration-300">
-                            <div class="flex-1">
-                                <h4 class="font-medium text-lg">Filter of the Day</h4>
-                                <p class="text-sm text-gray-400 font-light">Rotating single origin</p>
-                            </div>
-                            <div class="flex-1 border-b border-dotted border-gray-300 mx-4 relative top-[-4px]"></div>
-                            <span class="text-lg font-serif italic">$4.00</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- NOT COFFEE -->
-                <div>
-                    <h3 class="font-serif text-2xl mb-8 border-b border-brand-ink pb-4">Wellness & Tea</h3>
-                    <div class="space-y-6">
-                        <div class="flex justify-between items-baseline group hover:translate-x-2 transition-transform duration-300">
-                            <div class="flex-1">
-                                <h4 class="font-medium text-lg">Ceremonial Matcha</h4>
-                                <p class="text-sm text-gray-400 font-light">Kyoto sourced, whisked to order</p>
-                            </div>
-                            <div class="flex-1 border-b border-dotted border-gray-300 mx-4 relative top-[-4px]"></div>
-                            <span class="text-lg font-serif italic">$5.00</span>
-                        </div>
-                        <div class="flex justify-between items-baseline group hover:translate-x-2 transition-transform duration-300">
-                            <div class="flex-1">
-                                <h4 class="font-medium text-lg">Golden Latte</h4>
-                                <p class="text-sm text-gray-400 font-light">House turmeric blend, honey</p>
-                            </div>
-                            <div class="flex-1 border-b border-dotted border-gray-300 mx-4 relative top-[-4px]"></div>
-                            <span class="text-lg font-serif italic">$4.50</span>
-                        </div>
-                        <div class="flex justify-between items-baseline group hover:translate-x-2 transition-transform duration-300">
-                            <div class="flex-1">
-                                <h4 class="font-medium text-lg">Iced Hojicha</h4>
-                                <p class="text-sm text-gray-400 font-light">Roasted green tea, nutty & smooth</p>
-                            </div>
-                            <div class="flex-1 border-b border-dotted border-gray-300 mx-4 relative top-[-4px]"></div>
-                            <span class="text-lg font-serif italic">$5.00</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- BITES -->
-                 <div>
-                    <h3 class="font-serif text-2xl mb-8 border-b border-brand-ink pb-4">Provisions</h3>
-                    <div class="space-y-6">
-                        <div class="flex justify-between items-baseline group hover:translate-x-2 transition-transform duration-300">
-                            <div class="flex-1">
-                                <h4 class="font-medium text-lg">Sourdough Toast</h4>
-                                <p class="text-sm text-gray-400 font-light">Cultured butter & sea salt</p>
-                            </div>
-                            <div class="flex-1 border-b border-dotted border-gray-300 mx-4 relative top-[-4px]"></div>
-                            <span class="text-lg font-serif italic">$4.50</span>
-                        </div>
-                        <div class="flex justify-between items-baseline group hover:translate-x-2 transition-transform duration-300">
-                            <div class="flex-1">
-                                <h4 class="font-medium text-lg">Seasonal Galette</h4>
-                                <p class="text-sm text-gray-400 font-light">Ask for today's flavor</p>
-                            </div>
-                            <div class="flex-1 border-b border-dotted border-gray-300 mx-4 relative top-[-4px]"></div>
-                            <span class="text-lg font-serif italic">$6.00</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="mt-20 text-center">
-                <a href="#" class="inline-block px-12 py-3 border border-brand-ink text-xs uppercase tracking-widest hover:bg-brand-ink hover:text-white transition-all duration-300">
-                    Full Menu PDF
-                </a>
-            </div>
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-20">
+          <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-rust mb-4">
+            The Selection
+          </p>
+          <h2 class="font-serif text-5xl md:text-6xl mb-6">Menu</h2>
+          <p class="font-light text-gray-500 italic">Seasonal. Simple. Sustainable.</p>
         </div>
+
+        <div class="grid md:grid-cols-1 gap-20">
+          <!-- COFFEE -->
+          <div>
+            <h3 class="font-serif text-2xl mb-8 border-b border-brand-ink pb-4">Espresso Bar</h3>
+            <div class="space-y-6">
+              <div
+                class="flex justify-between items-baseline group hover:translate-x-2 transition-transform duration-300"
+              >
+                <div class="flex-1">
+                  <h4 class="font-medium text-lg">House Black</h4>
+                  <p class="text-sm text-gray-400 font-light">Double shot / Long black</p>
+                </div>
+                <div
+                  class="flex-1 border-b border-dotted border-gray-300 mx-4 relative top-[-4px]"
+                ></div>
+                <span class="text-lg font-serif italic">$3.50</span>
+              </div>
+              <div
+                class="flex justify-between items-baseline group hover:translate-x-2 transition-transform duration-300"
+              >
+                <div class="flex-1">
+                  <h4 class="font-medium text-lg">Oat Flat White</h4>
+                  <p class="text-sm text-gray-400 font-light">Minor Figures Oat M*lk</p>
+                </div>
+                <div
+                  class="flex-1 border-b border-dotted border-gray-300 mx-4 relative top-[-4px]"
+                ></div>
+                <span class="text-lg font-serif italic">$4.50</span>
+              </div>
+              <div
+                class="flex justify-between items-baseline group hover:translate-x-2 transition-transform duration-300"
+              >
+                <div class="flex-1">
+                  <h4 class="font-medium text-lg">Cold Brew & Tonic</h4>
+                  <p class="text-sm text-gray-400 font-light">With rosemary sprig</p>
+                </div>
+                <div
+                  class="flex-1 border-b border-dotted border-gray-300 mx-4 relative top-[-4px]"
+                ></div>
+                <span class="text-lg font-serif italic">$5.50</span>
+              </div>
+              <div
+                class="flex justify-between items-baseline group hover:translate-x-2 transition-transform duration-300"
+              >
+                <div class="flex-1">
+                  <h4 class="font-medium text-lg">Filter of the Day</h4>
+                  <p class="text-sm text-gray-400 font-light">Rotating single origin</p>
+                </div>
+                <div
+                  class="flex-1 border-b border-dotted border-gray-300 mx-4 relative top-[-4px]"
+                ></div>
+                <span class="text-lg font-serif italic">$4.00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- NOT COFFEE -->
+          <div>
+            <h3 class="font-serif text-2xl mb-8 border-b border-brand-ink pb-4">Wellness & Tea</h3>
+            <div class="space-y-6">
+              <div
+                class="flex justify-between items-baseline group hover:translate-x-2 transition-transform duration-300"
+              >
+                <div class="flex-1">
+                  <h4 class="font-medium text-lg">Ceremonial Matcha</h4>
+                  <p class="text-sm text-gray-400 font-light">Kyoto sourced, whisked to order</p>
+                </div>
+                <div
+                  class="flex-1 border-b border-dotted border-gray-300 mx-4 relative top-[-4px]"
+                ></div>
+                <span class="text-lg font-serif italic">$5.00</span>
+              </div>
+              <div
+                class="flex justify-between items-baseline group hover:translate-x-2 transition-transform duration-300"
+              >
+                <div class="flex-1">
+                  <h4 class="font-medium text-lg">Golden Latte</h4>
+                  <p class="text-sm text-gray-400 font-light">House turmeric blend, honey</p>
+                </div>
+                <div
+                  class="flex-1 border-b border-dotted border-gray-300 mx-4 relative top-[-4px]"
+                ></div>
+                <span class="text-lg font-serif italic">$4.50</span>
+              </div>
+              <div
+                class="flex justify-between items-baseline group hover:translate-x-2 transition-transform duration-300"
+              >
+                <div class="flex-1">
+                  <h4 class="font-medium text-lg">Iced Hojicha</h4>
+                  <p class="text-sm text-gray-400 font-light">Roasted green tea, nutty & smooth</p>
+                </div>
+                <div
+                  class="flex-1 border-b border-dotted border-gray-300 mx-4 relative top-[-4px]"
+                ></div>
+                <span class="text-lg font-serif italic">$5.00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- BITES -->
+          <div>
+            <h3 class="font-serif text-2xl mb-8 border-b border-brand-ink pb-4">Provisions</h3>
+            <div class="space-y-6">
+              <div
+                class="flex justify-between items-baseline group hover:translate-x-2 transition-transform duration-300"
+              >
+                <div class="flex-1">
+                  <h4 class="font-medium text-lg">Sourdough Toast</h4>
+                  <p class="text-sm text-gray-400 font-light">Cultured butter & sea salt</p>
+                </div>
+                <div
+                  class="flex-1 border-b border-dotted border-gray-300 mx-4 relative top-[-4px]"
+                ></div>
+                <span class="text-lg font-serif italic">$4.50</span>
+              </div>
+              <div
+                class="flex justify-between items-baseline group hover:translate-x-2 transition-transform duration-300"
+              >
+                <div class="flex-1">
+                  <h4 class="font-medium text-lg">Seasonal Galette</h4>
+                  <p class="text-sm text-gray-400 font-light">Ask for today's flavor</p>
+                </div>
+                <div
+                  class="flex-1 border-b border-dotted border-gray-300 mx-4 relative top-[-4px]"
+                ></div>
+                <span class="text-lg font-serif italic">$6.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-20 text-center">
+          <a
+            href="#"
+            class="inline-block px-12 py-3 border border-brand-ink text-xs uppercase tracking-widest hover:bg-brand-ink hover:text-white transition-all duration-300"
+          >
+            Full Menu PDF
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- EVENTS SECTION (Minimalist Grid) -->
     <section id="events" class="py-24 px-6 md:px-12 border-t border-brand-stone bg-brand-stone/10">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-brand-stone pb-8">
-                <div>
-                    <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-rust mb-4">Culture</p>
-                    <h2 class="font-serif text-4xl md:text-5xl">HAPPENINGS</h2>
-                </div>
-                <a href="#" class="text-sm underline underline-offset-4 decoration-1 hover:text-brand-rust">View Full Calendar</a>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-stone border border-brand-stone">
-
-                <!-- Event 1 -->
-                <div class="bg-brand-paper p-12 hover:bg-white transition-colors group cursor-pointer">
-                    <div class="flex justify-between items-start mb-8">
-                        <span class="inline-block px-3 py-1 border border-brand-stone text-xs uppercase tracking-widest">This Friday</span>
-                        <span class="font-serif italic text-gray-400">7PM</span>
-                    </div>
-                    <h3 class="font-serif text-3xl mb-4 group-hover:text-brand-rust transition-colors">Latte Art Throwdown</h3>
-                    <p class="font-light text-gray-500 mb-8 max-w-sm">
-                        Local baristas face off. Pouring skills, steady hands, and good vibes only.
-                    </p>
-                    <div class="flex items-center gap-2 text-xs uppercase tracking-widest font-bold">
-                        <span>RSVP</span>
-                        <span class="w-4 h-px bg-current"></span>
-                    </div>
-                </div>
-
-                <!-- Event 2 -->
-                <div class="bg-brand-paper p-12 hover:bg-white transition-colors group cursor-pointer">
-                    <div class="flex justify-between items-start mb-8">
-                        <span class="inline-block px-3 py-1 border border-brand-stone text-xs uppercase tracking-widest">Sunday</span>
-                        <span class="font-serif italic text-gray-400">6PM</span>
-                    </div>
-                    <h3 class="font-serif text-3xl mb-4 group-hover:text-brand-rust transition-colors">Acoustic Sessions</h3>
-                    <p class="font-light text-gray-500 mb-8 max-w-sm">
-                        Unplugged performances from local singer-songwriters. Intimate & raw.
-                    </p>
-                    <div class="flex items-center gap-2 text-xs uppercase tracking-widest font-bold">
-                        <span>RSVP</span>
-                        <span class="w-4 h-px bg-current"></span>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-brand-stone pb-8"
+        >
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-rust mb-4">Culture</p>
+            <h2 class="font-serif text-4xl md:text-5xl">HAPPENINGS</h2>
+          </div>
+          <a
+            href="#"
+            class="text-sm underline underline-offset-4 decoration-1 hover:text-brand-rust"
+            >View Full Calendar</a
+          >
         </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-px bg-brand-stone border border-brand-stone"
+        >
+          <!-- Event 1 -->
+          <div class="bg-brand-paper p-12 hover:bg-white transition-colors group cursor-pointer">
+            <div class="flex justify-between items-start mb-8">
+              <span
+                class="inline-block px-3 py-1 border border-brand-stone text-xs uppercase tracking-widest"
+                >This Friday</span
+              >
+              <span class="font-serif italic text-gray-400">7PM</span>
+            </div>
+            <h3 class="font-serif text-3xl mb-4 group-hover:text-brand-rust transition-colors">
+              Latte Art Throwdown
+            </h3>
+            <p class="font-light text-gray-500 mb-8 max-w-sm">
+              Local baristas face off. Pouring skills, steady hands, and good vibes only.
+            </p>
+            <div class="flex items-center gap-2 text-xs uppercase tracking-widest font-bold">
+              <span>RSVP</span>
+              <span class="w-4 h-px bg-current"></span>
+            </div>
+          </div>
+
+          <!-- Event 2 -->
+          <div class="bg-brand-paper p-12 hover:bg-white transition-colors group cursor-pointer">
+            <div class="flex justify-between items-start mb-8">
+              <span
+                class="inline-block px-3 py-1 border border-brand-stone text-xs uppercase tracking-widest"
+                >Sunday</span
+              >
+              <span class="font-serif italic text-gray-400">6PM</span>
+            </div>
+            <h3 class="font-serif text-3xl mb-4 group-hover:text-brand-rust transition-colors">
+              Acoustic Sessions
+            </h3>
+            <p class="font-light text-gray-500 mb-8 max-w-sm">
+              Unplugged performances from local singer-songwriters. Intimate & raw.
+            </p>
+            <div class="flex items-center gap-2 text-xs uppercase tracking-widest font-bold">
+              <span>RSVP</span>
+              <span class="w-4 h-px bg-current"></span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- INSTAGRAM SECTION (Clean Grid) -->
     <section class="py-24 px-6 md:px-12">
-        <div class="max-w-7xl mx-auto mb-12 flex flex-col md:flex-row justify-between items-center gap-6">
-            <h2 class="font-serif text-3xl md:text-4xl">@brewandvibe</h2>
-            <a href="#" class="px-8 py-3 bg-white border border-brand-stone text-xs uppercase tracking-widest hover:border-brand-ink transition-all">
-                Follow Us
-            </a>
-        </div>
+      <div
+        class="max-w-7xl mx-auto mb-12 flex flex-col md:flex-row justify-between items-center gap-6"
+      >
+        <h2 class="font-serif text-3xl md:text-4xl">@brewandvibe</h2>
+        <a
+          href="#"
+          class="px-8 py-3 bg-white border border-brand-stone text-xs uppercase tracking-widest hover:border-brand-ink transition-all"
+        >
+          Follow Us
+        </a>
+      </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-            <div class="aspect-square bg-gray-100 overflow-hidden relative group">
-                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Post">
-                <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div class="aspect-square bg-gray-100 overflow-hidden relative group">
-                <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Post">
-                <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div class="aspect-square bg-gray-100 overflow-hidden relative group">
-                <img src="https://images.unsplash.com/photo-1463171379577-7f9923024716?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Post">
-                <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div class="aspect-square bg-gray-100 overflow-hidden relative group">
-                <img src="https://images.unsplash.com/photo-1510972527921-ce0109dd1845?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Post">
-                <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+        <div class="aspect-square bg-gray-100 overflow-hidden relative group">
+          <img
+            src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            alt="Post"
+          />
+          <div
+            class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          ></div>
         </div>
+        <div class="aspect-square bg-gray-100 overflow-hidden relative group">
+          <img
+            src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            alt="Post"
+          />
+          <div
+            class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          ></div>
+        </div>
+        <div class="aspect-square bg-gray-100 overflow-hidden relative group">
+          <img
+            src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            alt="Post"
+          />
+          <div
+            class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          ></div>
+        </div>
+        <div class="aspect-square bg-gray-100 overflow-hidden relative group">
+          <img
+            src="https://images.unsplash.com/photo-1506372023823-741c83b836fe?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            alt="Post"
+          />
+          <div
+            class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          ></div>
+        </div>
+      </div>
     </section>
 
     <!-- LOCATION (Split Layout) -->
     <section id="location" class="grid md:grid-cols-2 min-h-[600px] border-t border-brand-stone">
-        <!-- Info -->
-        <div class="p-12 md:p-24 flex flex-col justify-center bg-brand-paper">
-            <h2 class="font-serif text-4xl mb-12">Visit Us</h2>
+      <!-- Info -->
+      <div class="p-12 md:p-24 flex flex-col justify-center bg-brand-paper">
+        <h2 class="font-serif text-4xl mb-12">Visit Us</h2>
 
-            <div class="space-y-12">
-                <div>
-                    <h4 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Location</h4>
-                    <p class="text-xl font-light">123 Espresso Lane</p>
-                    <p class="text-xl font-light">Coffee District, NY 10012</p>
-                    <a href="#" class="inline-block mt-4 text-sm underline decoration-gray-300 underline-offset-4 hover:decoration-brand-ink transition-all">Get Directions</a>
-                </div>
+        <div class="space-y-12">
+          <div>
+            <h4 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Location</h4>
+            <p class="text-xl font-light">123 Espresso Lane</p>
+            <p class="text-xl font-light">Coffee District, NY 10012</p>
+            <a
+              href="#"
+              class="inline-block mt-4 text-sm underline decoration-gray-300 underline-offset-4 hover:decoration-brand-ink transition-all"
+              >Get Directions</a
+            >
+          </div>
 
-                <div>
-                    <h4 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Hours</h4>
-                    <div class="grid grid-cols-2 gap-8 max-w-xs">
-                        <div>
-                            <p class="font-medium">Weekdays</p>
-                            <p class="font-light text-gray-500">7am — 10pm</p>
-                        </div>
-                        <div>
-                            <p class="font-medium">Weekends</p>
-                            <p class="font-light text-gray-500">8am — 11pm</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex gap-8 pt-8 border-t border-brand-stone w-full max-w-xs">
-                    <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Wi-Fi</span>
-                    <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Power</span>
-                    <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Outdoor</span>
-                </div>
+          <div>
+            <h4 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Hours</h4>
+            <div class="grid grid-cols-2 gap-8 max-w-xs">
+              <div>
+                <p class="font-medium">Weekdays</p>
+                <p class="font-light text-gray-500">7am — 10pm</p>
+              </div>
+              <div>
+                <p class="font-medium">Weekends</p>
+                <p class="font-light text-gray-500">8am — 11pm</p>
+              </div>
             </div>
-        </div>
+          </div>
 
-        <!-- Map -->
-        <div class="relative min-h-[400px] grayscale contrast-[1.1] brightness-[1.1]">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158857.7281066703!2d-0.24168144921176335!3d51.5287718408761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2s!4v1623862215456!5m2!1sen!2s"
-                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          <div class="flex gap-8 pt-8 border-t border-brand-stone w-full max-w-xs">
+            <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Wi-Fi</span>
+            <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Power</span>
+            <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Outdoor</span>
+          </div>
         </div>
+      </div>
+
+      <!-- Map -->
+      <div class="relative min-h-[400px] grayscale contrast-[1.1] brightness-[1.1]">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158857.7281066703!2d-0.24168144921176335!3d51.5287718408761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2s!4v1623862215456!5m2!1sen!2s"
+          width="100%"
+          height="100%"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
     </section>
 
     <!-- FOOTER (Minimal) -->
-    <footer class="bg-brand-paper py-12 px-6 md:px-12 border-t border-brand-stone text-xs uppercase tracking-widest text-gray-500">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="font-bold text-brand-ink">BREW & VIBE.</div>
-            <div class="flex gap-8">
-                <a href="#" class="hover:text-brand-rust transition-colors">Instagram</a>
-                <a href="#" class="hover:text-brand-rust transition-colors">Contact</a>
-                <a href="#" class="hover:text-brand-rust transition-colors">Careers</a>
-            </div>
-            <div>&copy; 2024 All Rights Reserved.</div>
+    <footer
+      class="bg-brand-paper py-12 px-6 md:px-12 border-t border-brand-stone text-xs uppercase tracking-widest text-gray-500"
+    >
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="font-bold text-brand-ink">BREW & VIBE.</div>
+        <div class="flex gap-8">
+          <a href="#" class="hover:text-brand-rust transition-colors">Instagram</a>
+          <a href="#" class="hover:text-brand-rust transition-colors">Contact</a>
+          <a href="#" class="hover:text-brand-rust transition-colors">Careers</a>
         </div>
+        <div>&copy; 2024 All Rights Reserved.</div>
+      </div>
     </footer>
-
-</body>
+  </body>
 </html>
